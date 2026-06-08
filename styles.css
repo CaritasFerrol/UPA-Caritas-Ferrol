@@ -323,3 +323,42 @@ h1{
 .sugerencia-item:hover{
     background:#f5f7fa;
 }
+/* =========================
+   MOVILES
+========================= */
+
+@media (max-width: 768px) {
+
+    .container{
+        width:95%;
+        padding:10px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    .subtitulo{
+        font-size:16px;
+        margin-top:0;
+    }
+
+    .header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo{
+        width:70px;
+    }
+
+    .busqueda{
+        flex-direction:column;
+    }
+
+    .busqueda button{
+        height:55px;
+    }
+
+    .contenido{
+        display
