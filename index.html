@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>UPA Cáritas Ferrol</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <div class="container">
+
+<div class="header">
+
+    <img src="logo-caritas.png" class="logo">
+
+    <div>
+        <h1>UPA Cáritas Ferrol</h1>
+        <p class="subtitulo">
+            Buscar dirección y localizar UPA
+        </p>
+    </div>
+
+</div>
+
+        <div class="busqueda">
+
+    <div class="input-busqueda">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <input
+            type="text"
+            id="direccion"
+            placeholder="Escriba una dirección..."
+            autocomplete="off"
+        >
+
+        <div id="sugerencias"></div>
+
+    </div>
+
+    <button id="buscarBtn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Buscar
+    </button>
+
+</div>
+
+       <div class="contenido">
+
+    <div id="resultado">
+
+        <h2>Resultado</h2>
+
+        <p>Aún no se ha realizado ninguna búsqueda.</p>
+
+    </div>
+
+    <div id="map"></div>
+
+</div>
+
+    </div>
+
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1{
+    margin:0;
+    color:#d32f2f;
+    font-size:52px;
+    font-weight:800;
+}
+
+.busqueda{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.busqueda input{
+    flex:1;
+    padding:20px;
+    font-size:18px;
+    border:1px solid #d8d8d8;
+    border-radius:15px;
+    outline:none;
+}
+
+.busqueda button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:0 35px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.busqueda button:hover {
+    background: #1b5e20;
+}
+
+#resultado {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+
+#resultado h2 {
+    margin-top: 0;
+    color: #ff6f00;
+    font-size: 36px;
+}
+
+#resultado p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+#map {
+    height: 650px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+/* =========================
+   ENCABEZADO
+========================= */
+
+.header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.logo{
+    width:90px;
+    height:auto;
+}
+
+.subtitulo{
+    margin-top:-10px;
+    color:#666;
+    font-size:22px;
+}
+
+/* =========================
+   DOS COLUMNAS
+========================= */
+
+.contenido{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:25px;
+    align-items:start;
+}
+
+/* =========================
+   TARJETA RESULTADO
+========================= */
+
+#resultado{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.10);
+    min-height:590px;
+}
+
+/* =========================
+   MAPA
+========================= */
+
+#map{
+    height:650px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,0.10);
+}
+.upa-icono{
+    width:80px;
+    height:80px;
+    background:#ff8c1a;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.info-item{
+    display:flex;
+    gap:15px;
+    margin-bottom:22px;
+    align-items:flex-start;
+}
+
+.info-item i{
+    font-size:28px;
+    margin-top:4px;
+}
+
+.icon-red{
+    color:#ff4d4d;
+}
+
+.icon-blue{
+    color:#2196f3;
+}
+
+.icon-green{
+    color:#1fb95d;
+}
+
+.icon-purple{
+    color:#9c27b0;
+}
+
+.aviso-upa{
+    margin-top:25px;
+    padding:18px;
+    border-radius:12px;
+    background:#fff8ef;
+    border:1px solid #ffd8a6;
+    color:#555;
+}
+
+.aviso-upa i{
+    color:#ff8c1a;
+    margin-right:10px;
+}
+/* =========================
+   TARJETA PROFESIONAL UPA
+========================= */
+
+.upa-titulo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.icono-upa{
+    width:90px;
+    height:90px;
+    background:#ff8c1a;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.card-upa h2{
+    margin:0;
+    color:#ff6f00;
+    font-size:34px;
+    text-align:center;
+}
+
+.info-item{
+    display:flex;
+    gap:18px;
+    margin:22px 0;
+    align-items:flex-start;
+}
+
+.icono{
+    min-width:45px;
+    font-size:28px;
+    text-align:center;
+}
+
+.rojo{
+    color:#f44336;
+}
+
+.azul{
+    color:#2196f3;
+}
+
+.verde{
+    color:#2e7d32;
+}
+
+.morado{
+    color:#9c27b0;
+}
+
+.aviso-upa{
+    margin-top:25px;
+    padding:18px;
+    border-radius:14px;
+    background:#fff4e5;
+    border-left:6px solid #ff9800;
+    font-size:16px;
+    color:#555;
+}
+
+.aviso-upa i{
+    color:#ff9800;
+    margin-right:8px;
+}
+/* =========================
+   BUSCADOR PROFESIONAL
+========================= */
+
+.input-busqueda{
+    flex:1;
+    position:relative;
+}
+
+.input-busqueda i{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#666;
+    font-size:20px;
+}
+
+.input-busqueda input{
+    width:100%;
+    box-sizing:border-box;
+    padding:20px 20px 20px 50px;
+}
+/* =========================
+   SUGERENCIAS
+========================= */
+
+.input-busqueda{
+    position:relative;
+    flex:1;
+}
+
+#sugerencias{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+
+    background:white;
+
+    border-radius:0 0 15px 15px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+
+    z-index:999;
+
+    display:none;
+
+    overflow:hidden;
+}
+
+.sugerencia-item{
+    padding:14px 18px;
+    cursor:pointer;
+    border-bottom:1px solid #f0f0f0;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.sugerencia-item i{
+    color:#ff6f00;
+}
+
+.sugerencia-item:hover{
+    background:#f5f7fa;
+}
