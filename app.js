@@ -117,32 +117,70 @@ document.getElementById("direccion").addEventListener("keypress", function(event
 
 let marcadorBusqueda;
 
+let buscando = false;
 async function buscarDireccion() {
 
-    const direccion = document.getElementById("direccion").value;
+    if (buscando) return;
+
+buscando = true;
+
+document.getElementById("resultado").innerHTML = `
+    <h2>Resultado</h2>
+    <p>
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        Buscando dirección...
+    </p>
+`;
+
+   const textoUsuario =
+document.getElementById("direccion").value.trim();
+
+if (!textoUsuario) {
+    alert("Escriba una dirección");
+    buscando = false;
+    return;
+}
+
+const direccion = textoUsuario + ", Ferrol, A Coruña";
 
     if (!direccion) {
-        alert("Escriba una dirección");
-        return;
-    }
+    alert("Escriba una dirección");
+    buscando = false;
+    return;
+}
 
     const url =
         "https://nominatim.openstreetmap.org/search?format=json&q=" +
         encodeURIComponent(direccion);
 
-    const respuesta = await fetch(url);
+    let datos;
 
-    const datos = await respuesta.json();
+try {
+
+    const respuesta = await fetch(url);
+    datos = await respuesta.json();
+
+} catch (error) {
+
+    document.getElementById("resultado").innerHTML = `
+        <h2>Resultado</h2>
+        <p>Error al consultar la dirección. Intente nuevamente.</p>
+    `;
+
+    buscando = false;
+    return;
+}
 
     if (datos.length === 0) {
 
-        document.getElementById("resultado").innerHTML = `
-            <h2>Resultado</h2>
-            <p>No se encontró la dirección.</p>
-        `;
+    document.getElementById("resultado").innerHTML = `
+        <h2>Resultado</h2>
+        <p>No se encontró la dirección.</p>
+    `;
 
-        return;
-    }
+    buscando = false;
+    return;
+}
 
     const lat = parseFloat(datos[0].lat);
     const lon = parseFloat(datos[0].lon);
@@ -266,4 +304,8 @@ map.fitBounds(capaUPA.getBounds());
         <p>Dirección localizada, pero fuera de las zonas UPA definidas.</p>
     `;
 }
+
+buscando = false;
+console.log("Búsqueda finalizada");
+
 }
